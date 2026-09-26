@@ -1,0 +1,14 @@
+/*
+ * Additions on top of the original stripe.com styles.
+ * Everything else in /styles is the site's own CSS, purged of unused rules.
+ */
+
+/* Replaces `#__next { isolation: isolate }` from the Pages Router app shell. */
+.app-root {
+  isolation: isolate;
+}
+
+/* Bento cards are links here (they opened dialogs on stripe.com). */
+a.modular-solutions-bento-card {
+  text-decoration: none;
+}

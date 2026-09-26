@@ -1,0 +1,39 @@
+/*
+ * Desktop image stage for the "What's happening" carousel.
+ * Stands in for the WebGL "squeezy" canvas used on stripe.com: the active slide
+ * expands while the rest collapse into slivers.
+ */
+.events-stage {
+  display: flex;
+  gap: var(--hds-space-core-100);
+  width: 100%;
+  aspect-ratio: 1232 / 460;
+}
+
+.events-stage__item {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  border-radius: var(--hds-space-core-radius-md);
+  background: var(--hds-color-core-neutral-50);
+  cursor: pointer;
+  transition: flex-grow 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.events-stage__item--active {
+  flex-grow: 8;
+  cursor: default;
+}
+
+.events-stage__item img {
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .events-stage__item {
+    transition: none;
+  }
+}

@@ -1,0 +1,56 @@
+// Generated from the original page markup. Edit freely.
+import { useId, type SVGProps } from "react";
+
+/** Stripe Atlas gradient mark. */
+export function AtlasGraphic(props: SVGProps<SVGSVGElement>) {
+  const uid = useId();
+  return (
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M19.9952 1c.9747 0 1.8657.5513 2.3006 1.42365l7.9975 15.99495 8.425 16.8558c.3991.7977.3569 1.7452-.1118 2.5041-.3437.5566-.8808.9537-1.4945 1.126l-.1692.0412c-.114.0238-.2301.04-.3478.0481L36.4176 39l-16.4224-3.2655L9.69702 18.4186 17.6945 2.42365C18.1295 1.5513 19.0204 1 19.9952 1"
+        fill="#fb0"
+      />
+      <path
+        d="M19.9952 1c.9748 0 1.8657.5513 2.3007 1.42365l7.9975 15.99495-10.2982 17.3159L3.5728 39c-.892 0-1.72022-.4625-2.1889-1.2215-.468672-.7589-.510968-1.7064-.11178-2.5041l8.42495-16.8558L17.6945 2.42365C18.1295 1.5513 19.0204 1 19.9952 1"
+        fill={`url(#${uid}-0)`}
+      />
+      <path
+        d="M19.9952 1c.9747 0 1.8657.5513 2.3006 1.42365l7.9975 15.99495-10.2981 17.3159L9.69702 18.4186 17.6945 2.42365c.4078-.81782 1.2163-1.35348 2.119-1.41725z"
+        fill={`url(#${uid}-1)`}
+      />
+      <defs>
+        <linearGradient
+          id={`${uid}-0`}
+          x1="15.6303"
+          y1="18.2379"
+          x2="15.545"
+          y2="38.9999"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#ffd748" />
+          <stop offset=".5362" stopColor="#ffcd48" />
+          <stop offset="1" stopColor="#ffcb48" />
+        </linearGradient>
+        <linearGradient
+          id={`${uid}-1`}
+          x1="19.9976"
+          y1="34.5164"
+          x2="19.9976"
+          y2="15.3186"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#ffad00" />
+          <stop offset="1" stopColor="#ff7600" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}

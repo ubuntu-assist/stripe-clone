@@ -1,0 +1,129 @@
+/* Colours use the Stripe (HDS) design tokens from styles/tokens.css. */
+.section {
+  --ribbon-ink: var(--hds-color-core-neutral-990, #061b31);
+  --ribbon-surface: var(--hds-color-core-neutral-0, #fff);
+  --ribbon-hover: var(--hds-color-core-neutral-50, #e5edf5);
+  --ribbon-speed: 40s;
+
+  padding-block: 96px;
+  /* Keep the rotated, scaled ribbons from causing horizontal scroll. */
+  overflow-x: clip;
+  background:
+    radial-gradient(60% 80% at 15% 0%, rgba(255, 138, 0, 0.18), transparent 70%),
+    radial-gradient(60% 80% at 85% 100%, rgba(207, 44, 171, 0.16), transparent 70%),
+    linear-gradient(180deg, #f6f9fc, #ecebff);
+}
+
+.title {
+  margin: 0 16px 48px;
+  text-align: center;
+  font-family: var(--hds-font-family, sohne-var, "Helvetica Neue", Arial, sans-serif);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ribbon-ink);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+}
+
+/* ---------------------------------------------------------------- ribbons */
+.ribbon {
+  display: flex;
+  overflow: hidden;
+  border-block: 4px solid var(--ribbon-ink);
+  background: var(--ribbon-surface);
+}
+
+.tiltDown {
+  transform: translateY(50%) rotate(7deg) scale(1.1);
+}
+
+.tiltUp {
+  position: relative;
+  transform: translateY(-50%) rotate(-7deg) scale(1.1);
+  border-color: var(--hds-color-core-brand-600, #533afd);
+}
+
+.track {
+  display: flex;
+  flex-shrink: 0;
+  padding-inline: 8px;
+  animation: var(--ribbon-speed) linear infinite;
+}
+
+.scrollLeft {
+  animation-name: ribbon-left;
+}
+
+.scrollRight {
+  animation-name: ribbon-right;
+}
+
+/* Pause both copies of a ribbon while it's hovered or has focus. */
+.ribbon:hover .track,
+.ribbon:focus-within .track {
+  animation-play-state: paused;
+}
+
+@keyframes ribbon-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes ribbon-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ---------------------------------------------------------------- items */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  color: var(--ribbon-ink);
+  transition: background-color 0.2s ease;
+}
+
+.item svg {
+  width: auto;
+  height: 34px;
+}
+
+a.item:hover,
+a.item:focus-visible {
+  background: var(--ribbon-hover);
+}
+
+a.item:focus-visible {
+  outline: 2px solid var(--hds-color-core-brand-600, #533afd);
+  outline-offset: -4px;
+}
+
+@media (min-width: 768px) {
+  .item {
+    padding-block: 24px;
+  }
+
+  .item svg {
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

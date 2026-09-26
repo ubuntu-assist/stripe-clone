@@ -1,0 +1,48 @@
+@layer reset, base, app;
+@media (min-width: 600px) {
+  @font-face {
+    font-family: sohne-var;
+    src: url(/fonts/Sohne.woff2) format("woff2-variations");
+    font-weight: 1 1000;
+    font-display: block;
+  }
+}
+@media (max-width: 599px) {
+  @font-face {
+    font-family: sohne-var;
+    src: url(/fonts/Sohne.woff2) format("woff2-variations");
+    font-weight: 1 1000;
+    font-display: swap;
+  }
+}
+@font-face {
+  font-family: SourceCodePro;
+  src: url(/fonts/SourceCodePro-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.tabular-nums,
+.tabular-nums--tight {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+.tabular-nums--tight {
+  letter-spacing: -0.03em;
+}
+sup {
+  top: 0;
+  font-size: 1em;
+  font-feature-settings: "sups" 1;
+}
